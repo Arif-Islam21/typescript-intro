@@ -20,7 +20,7 @@ function placeOrder(pizzaName) {
     return;
   }
   cashInRegister += selectedPizza.price;
-  const newOrder = {
+  const newOrder: any = {
     id: nextOrderId++,
     pizza: selectedPizza,
     status: "Ordered",
@@ -29,8 +29,8 @@ function placeOrder(pizzaName) {
   return newOrder;
 }
 
-function completeOrder(orderId) {
-  const order = orderQueue.find((order) => order.id === orderId);
+function completeOrder(orderId: number) {
+  const order: any = orderQueue.find((order: any) => order.id === orderId);
   order.status = "Completed";
   return order;
 }
@@ -40,7 +40,7 @@ addNewPizza({ name: "BBQ", price: 10 });
 addNewPizza({ name: "Spicy", price: 11 });
 
 placeOrder("chikken");
-completeOrder("1");
+completeOrder(1);
 
 console.log("menu", menu);
 console.log("cash", cashInRegister);
