@@ -43,3 +43,5 @@
 // console.log("Order Queue", orderQueue);
 
 // introduceing types
+// let myName = "Bob";
+// myName = 8;
