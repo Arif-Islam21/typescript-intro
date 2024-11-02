@@ -17,3 +17,4 @@ let person2: Person = {
 
 // let People: Person[] = [person1, person2];
 let People: Array<Person> = [person1, person2]; //DONE WITH GENERICS
+console.log("hi array");
