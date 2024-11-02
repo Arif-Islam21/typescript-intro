@@ -17,7 +17,7 @@ type Person = {
   address?: Address;
 };
 
-let person: Person = {
+let person1: Person = {
   name: "arif",
   age: 20,
   isStudent: true,
@@ -32,3 +32,9 @@ let person2: Person = {
     country: "Bangladesh",
   },
 };
+
+function displayInfo(person: Person) {
+  console.log(`${person.name} lives at ${person?.address?.street}`);
+}
+
+displayInfo(person1);
