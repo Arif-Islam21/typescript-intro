@@ -1,2 +1,2 @@
-var hello = "Hello World";
-console.log(hello);
+var greeting = "Hello, TypeScript!";
+console.log(greeting);
