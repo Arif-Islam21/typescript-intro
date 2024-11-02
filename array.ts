@@ -15,4 +15,5 @@ let person2: Person = {
   isStudent: false,
 };
 
-let People: Person[] = [person1, person2];
+// let People: Person[] = [person1, person2];
+let People: Array<Person> = [person1, person2]; //DONE WITH GENERICS
