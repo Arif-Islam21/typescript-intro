@@ -10,16 +10,17 @@ type Order = {
   status: "Ordered" | "Completed";
 };
 
-const menu: Pizza[] = [
-  { id: 1, name: "margharita", price: 8 },
-  { id: 2, name: "pepperium", price: 12 },
-  { id: 3, name: "quora", price: 10 },
-  { id: 4, name: "mangito", price: 9 },
-];
-
 let cashInRegister = 100;
 let nextOrderId = 1;
+let nextPizzaId = 1;
 const orderQueue: Order[] = [];
+
+const menu: Pizza[] = [
+  { id: nextPizzaId++, name: "margharita", price: 8 },
+  { id: nextPizzaId++, name: "pepperium", price: 12 },
+  { id: nextPizzaId++, name: "quora", price: 10 },
+  { id: nextPizzaId++, name: "mangito", price: 9 },
+];
 
 function addNewPizza(pizzaObject: Pizza): void {
   menu.push(pizzaObject);
@@ -74,13 +75,13 @@ export function getPizzaDetails(
   }
 }
 
-// addNewPizza({ id: 4, name: "chikken", price: 12 });
-// addNewPizza({ id: 5, name: "BBQ", price: 10 });
-// addNewPizza({ id: 6, name: "Spicy", price: 11 });
+addNewPizza({ id: nextPizzaId++, name: "chikken", price: 12 });
+addNewPizza({ id: nextPizzaId++, name: "BBQ", price: 10 });
+addNewPizza({ id: nextPizzaId++, name: "Spicy", price: 11 });
 
-// placeOrder("chikken");
-// completeOrder(1);
+placeOrder("chikken");
+completeOrder(1);
 
-// console.log("menu", menu);
-// console.log("cash", cashInRegister);
-// console.log("Order Queue", orderQueue);
+console.log("menu", menu);
+console.log("cash", cashInRegister);
+console.log("Order Queue", orderQueue);
