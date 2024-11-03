@@ -51,6 +51,23 @@ function completeOrder(orderId: number) {
   return order;
 }
 
+function getPizzaDetails(identifier: number | string) {
+  // if (typeof identifier === "number") {
+  //   return menu.find((item) => item.id === identifier);
+  // } else if (typeof identifier === "string") {
+  //   return menu.find(
+  //     (item) => item.name.toLowerCase() === identifier.toLowerCase()
+  //   );
+  // }
+  if (typeof identifier === "string") {
+    return menu.find(
+      (item) => item.name.toLowerCase() === identifier.toLowerCase()
+    );
+  } else {
+    return menu.find((item) => item.id === identifier);
+  }
+}
+
 addNewPizza({ id: 4, name: "chikken", price: 12 });
 addNewPizza({ id: 5, name: "BBQ", price: 10 });
 addNewPizza({ id: 6, name: "Spicy", price: 11 });
