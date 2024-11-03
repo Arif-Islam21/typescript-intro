@@ -51,7 +51,9 @@ function completeOrder(orderId: number) {
   return order;
 }
 
-export function getPizzaDetails(identifier: number | string) {
+export function getPizzaDetails(
+  identifier: number | string
+): Pizza | undefined {
   // if (typeof identifier === "number") {
   //   return menu.find((item) => item.id === identifier);
   // } else if (typeof identifier === "string") {
