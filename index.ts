@@ -51,7 +51,7 @@ function completeOrder(orderId: number) {
   return order;
 }
 
-function getPizzaDetails(identifier: number | string) {
+export function getPizzaDetails(identifier: number | string) {
   // if (typeof identifier === "number") {
   //   return menu.find((item) => item.id === identifier);
   // } else if (typeof identifier === "string") {
@@ -63,18 +63,22 @@ function getPizzaDetails(identifier: number | string) {
     return menu.find(
       (item) => item.name.toLowerCase() === identifier.toLowerCase()
     );
-  } else {
+  } else if (typeof identifier === "number") {
     return menu.find((item) => item.id === identifier);
+  } else {
+    throw new TypeError(
+      "Parameter identifier must be either string or a number"
+    );
   }
 }
 
-addNewPizza({ id: 4, name: "chikken", price: 12 });
-addNewPizza({ id: 5, name: "BBQ", price: 10 });
-addNewPizza({ id: 6, name: "Spicy", price: 11 });
+// addNewPizza({ id: 4, name: "chikken", price: 12 });
+// addNewPizza({ id: 5, name: "BBQ", price: 10 });
+// addNewPizza({ id: 6, name: "Spicy", price: 11 });
 
-placeOrder("chikken");
-completeOrder(1);
+// placeOrder("chikken");
+// completeOrder(1);
 
-console.log("menu", menu);
-console.log("cash", cashInRegister);
-console.log("Order Queue", orderQueue);
+// console.log("menu", menu);
+// console.log("cash", cashInRegister);
+// console.log("Order Queue", orderQueue);
