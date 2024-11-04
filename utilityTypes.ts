@@ -27,7 +27,7 @@ function updateUser(id: number, updates: UpdatedUser) {
 // updateUser(4, { role: "admin" });
 // console.log(users);
 
-function addNewUser(newUser: any): Userr {
+function addNewUser(newUser: Omit<Userr, "id">): Userr {
   const user: Userr = {
     id: nextUserId++,
     ...newUser,
