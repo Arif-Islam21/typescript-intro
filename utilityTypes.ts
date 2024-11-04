@@ -6,11 +6,13 @@ type Userr = {
 
 type UpdatedUser = Partial<Userr>;
 
+let nextUserId = 1;
+
 const users: Userr[] = [
-  { id: 1, userName: "Jhon Doe", role: "member" },
-  { id: 2, userName: "Jhon Smith", role: "contributor" },
-  { id: 3, userName: "Jhon hasg", role: "admin" },
-  { id: 4, userName: "hi Doe", role: "member" },
+  { id: nextUserId++, userName: "Jhon Doe", role: "member" },
+  { id: nextUserId++, userName: "Jhon Smith", role: "contributor" },
+  { id: nextUserId++, userName: "Jhon hasg", role: "admin" },
+  { id: nextUserId++, userName: "hi Doe", role: "member" },
 ];
 
 function updateUser(id: number, updates: UpdatedUser) {
@@ -21,6 +23,18 @@ function updateUser(id: number, updates: UpdatedUser) {
   }
 }
 
-updateUser(1, { userName: "new jhon doe" });
-updateUser(4, { role: "admin" });
+// updateUser(1, { userName: "new jhon doe" });
+// updateUser(4, { role: "admin" });
+// console.log(users);
+
+function addNewUser(newUser: any): Userr {
+  const user: Userr = {
+    id: nextUserId++,
+    ...newUser,
+  };
+  users.push(user);
+  return user;
+}
+
+addNewUser({ userName: "jow smith", role: "member" });
 console.log(users);
