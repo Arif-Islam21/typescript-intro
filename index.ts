@@ -23,6 +23,7 @@ const menu: Pizza[] = [
 ];
 
 function addNewPizza(pizzaObject: Pizza): void {
+  pizzaObject.id = nextPizzaId++;
   menu.push(pizzaObject);
 }
 
@@ -75,13 +76,13 @@ export function getPizzaDetails(
   }
 }
 
-addNewPizza({ id: nextPizzaId++, name: "chikken", price: 12 });
-addNewPizza({ id: nextPizzaId++, name: "BBQ", price: 10 });
-addNewPizza({ id: nextPizzaId++, name: "Spicy", price: 11 });
+addNewPizza({ name: "chikken", price: 12 });
+addNewPizza({ name: "BBQ", price: 10 });
+addNewPizza({ name: "Spicy", price: 11 });
 
 placeOrder("chikken");
 completeOrder(1);
 
 console.log("menu", menu);
-console.log("cash", cashInRegister);
-console.log("Order Queue", orderQueue);
+// console.log("cash", cashInRegister);
+// console.log("Order Queue", orderQueue);
