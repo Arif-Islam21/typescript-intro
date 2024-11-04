@@ -96,7 +96,7 @@ function addToARray<T>(array: T[], item: T) {
   return array;
 }
 
-addToARray(menu, { id: nextPizzaId++, name: "chao", price: 12 });
+addToARray<Pizza>(menu, { id: nextPizzaId++, name: "chao", price: 12 });
 addToARray<Order>(orderQueue, {
   id: nextOrderId++,
   pizza: menu[2],
