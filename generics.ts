@@ -10,8 +10,9 @@ const voters = [
   { name: "Arif", age: 20 },
 ];
 
-function getLastItem<Generics>(array: Generics[]) {
+function getLastItem<T>(array: T[]): T | undefined {
   return array[array.length - 1];
 }
 
 getLastItem(voters);
+getLastItem(gameScores);

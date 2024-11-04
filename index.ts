@@ -90,3 +90,18 @@ completeOrder(1);
 console.log("menu", menu);
 // console.log("cash", cashInRegister);
 // console.log("Order Queue", orderQueue);
+
+function addToARray<T>(array: T[], item: T) {
+  array.push(item);
+  return array;
+}
+
+addToARray(menu, { id: nextPizzaId++, name: "chao", price: 12 });
+addToARray<Order>(orderQueue, {
+  id: nextOrderId++,
+  pizza: menu[2],
+  status: "Completed",
+});
+
+console.log(menu);
+console.log(orderQueue);
